@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "631419858227",
+    "project_id": "erpmarketnewapp",
+    "storage_bucket": "erpmarketnewapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631419858227:android:cfabf5e6d74e7445b92246",
+        "android_client_info": {
+          "package_name": "com.erpmarketnewapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631419858227-th5proljpupk2b30fs8qcemvsns71cuc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.erpmarketnewapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "631419858227-lf62i4md7uqadhj8cd2qbr4a2123fntm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAO7C6R7Tiq3__eVqPMRyV2iKZQ8cMBVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631419858227-lf62i4md7uqadhj8cd2qbr4a2123fntm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
