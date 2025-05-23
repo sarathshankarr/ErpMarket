@@ -120,14 +120,16 @@ const Login = ({onSwitchToSignup, navigation}) => {
           placeholderTextColor="#666"
         />
 </View>
-        {/* <TouchableOpacity onPress={navigateForgotPassword}>
+         <TouchableOpacity onPress={navigateForgotPassword}>
+         <View style={{marginHorizontal:10}}>
           <Text style={styles.forgotPassword}>Forgot Password?</Text>
-        </TouchableOpacity> */}
-          <TouchableOpacity>
+          </View>
+        </TouchableOpacity> 
+          {/* <TouchableOpacity>
           <View style={{marginHorizontal:10}}>
           <Text style={styles.forgotPassword}>Forgot Password?</Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <View style={{marginHorizontal:10}}>
         <TouchableOpacity style={styles.button} onPress={onLogin}>
           <Text style={styles.buttonText}>Log In</Text>

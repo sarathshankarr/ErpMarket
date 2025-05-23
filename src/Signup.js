@@ -6,9 +6,11 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
+  SafeAreaView,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import { useNavigation } from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
 
 const Signup = ({onSwitchToLogin}) => {
   const navigation = useNavigation();
@@ -39,13 +41,21 @@ const Signup = ({onSwitchToLogin}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.logoContainer}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainerlogo}>
         <Image
           style={styles.logo}
           source={require('../assets/loginbg.png')}
         />
       </View>
+       <View style={styles.logoContainer}>
+              <LottieView
+                source={require('../assets/Animation - 1747981972433.json')}
+                autoPlay
+                loop
+                style={{width: 150, height: 150}}
+              />
+            </View>
   <View style={{marginVertical:10}}>
       <Text style={styles.title}>Create Account</Text>
       </View>
@@ -79,7 +89,7 @@ const Signup = ({onSwitchToLogin}) => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
   
 };
@@ -88,12 +98,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f7f7f7',
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: 24,
   },
   logoContainer: {
+    flexDirection: 'row',
+    marginBottom: 20, // Adds spacing below the logo
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoContainerlogo: {
+    flexDirection: 'row',
+    marginBottom: 20, // Adds spacing below the logo
+    marginHorizontal: 20,
   },
   logo: {
     width: 60,
@@ -114,8 +130,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   formContainer: {
-    width: '100%',
+    width: '90%',
     alignItems: 'center',
+    marginHorizontal  : 20,
   },
   input: {
     width: '100%',
@@ -126,6 +143,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000',
     marginBottom: 15,
+    marginHorizontal  : 10, 
   },
   button: {
     width: '100%',

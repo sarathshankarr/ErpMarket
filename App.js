@@ -6,6 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Import your components
+import SplashScreen from './src/SplashScreen';
+import OnboardingScreen from './src/OnboardingScreen';
 import Signup from './src/Signup';
 import Login from './src/Login';
 import HomeScreen from './src/HomeScreen';
@@ -16,6 +18,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(null);
+  const [showSplash, setShowSplash] = useState(true);
 
   // Configure Google Sign-In
   useEffect(() => {
@@ -46,8 +49,19 @@ const App = () => {
     return subscriber; // unsubscribe on unmount
   }, []);
 
+  // Show splash screen initially
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 100); // Small delay to ensure proper initialization
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Show nothing while initializing
-  if (initializing) return null;
+  if (initializing || showSplash) {
+    return null;
+  }
 
   return (
     <NavigationContainer>
@@ -55,6 +69,7 @@ const App = () => {
         screenOptions={{
           headerShown: false,
         }}
+        initialRouteName={user ? "Home" : "Splash"}
       >
         {user ? (
           // User is signed in
@@ -62,6 +77,8 @@ const App = () => {
         ) : (
           // User is not signed in
           <>
+            <Stack.Screen name="Splash" component={SplashScreen} />
+            <Stack.Screen name="Onboarding" component={OnboardingScreen} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Signup" component={Signup} />
             <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
