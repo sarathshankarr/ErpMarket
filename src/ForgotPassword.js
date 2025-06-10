@@ -60,7 +60,7 @@ const ForgotPassword = ({navigation}) => {
       <TextInput
         style={styles.input}
         placeholder="Enter your email"
-        placeholderTextColor={'gray'}
+        placeholderTextColor={'#000'}
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"

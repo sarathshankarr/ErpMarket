@@ -25,9 +25,10 @@ const Login = ({onSwitchToSignup, navigation}) => {
       if (has) {
         GoogleSignin.configure({
           offlineAccess: true,
-          webClientId: Platform.OS === 'ios'
-            ? '631419858227-k61quel15pnel3u9rhn4ack6hdjlr28o.apps.googleusercontent.com'
-            : '631419858227-lf62i4md7uqadhj8cd2qbr4a2123fntm.apps.googleusercontent.com',
+          webClientId:
+            Platform.OS === 'ios'
+              ? '631419858227-k61quel15pnel3u9rhn4ack6hdjlr28o.apps.googleusercontent.com'
+              : '631419858227-lf62i4md7uqadhj8cd2qbr4a2123fntm.apps.googleusercontent.com',
         });
       }
     }
@@ -94,46 +95,46 @@ const Login = ({onSwitchToSignup, navigation}) => {
           onPress={onGoogleButtonPress}
         />
 
-<View style={styles.dividerContainer}>
+        <View style={styles.dividerContainer}>
           <View style={styles.dividerLine} />
           <Text style={styles.dividerText}>OR</Text>
           <View style={styles.dividerLine} />
         </View>
-        <View style={{marginHorizontal:10}}>
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
-          autoCapitalize="none"
-          placeholderTextColor="#666"
-        />
-</View>
-<View style={{marginHorizontal:10}}>
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          placeholderTextColor="#666"
-        />
-</View>
-         <TouchableOpacity onPress={navigateForgotPassword}>
-         <View style={{marginHorizontal:10}}>
-          <Text style={styles.forgotPassword}>Forgot Password?</Text>
+        <View style={{marginHorizontal: 10}}>
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            placeholderTextColor="#666"
+          />
+        </View>
+        <View style={{marginHorizontal: 10}}>
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+            placeholderTextColor="#666"
+          />
+        </View>
+        <TouchableOpacity onPress={navigateForgotPassword}>
+          <View style={{marginHorizontal: 10}}>
+            <Text style={styles.forgotPassword}>Forgot Password?</Text>
           </View>
-        </TouchableOpacity> 
-          {/* <TouchableOpacity>
+        </TouchableOpacity>
+        {/* <TouchableOpacity>
           <View style={{marginHorizontal:10}}>
           <Text style={styles.forgotPassword}>Forgot Password?</Text>
           </View>
         </TouchableOpacity> */}
-        <View style={{marginHorizontal:10}}>
-        <TouchableOpacity style={styles.button} onPress={onLogin}>
-          <Text style={styles.buttonText}>Log In</Text>
-        </TouchableOpacity>
+        <View style={{marginHorizontal: 10}}>
+          <TouchableOpacity style={styles.button} onPress={onLogin}>
+            <Text style={styles.buttonText}>Log In</Text>
+          </TouchableOpacity>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
           <Text style={styles.switchButtonText}>
@@ -149,18 +150,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  
   },
   logoContainer: {
     marginBottom: 10,
-    marginHorizontal:10
+    marginHorizontal: 10,
   },
   logo: {
     width: 60,
     height: 60,
     resizeMode: 'contain',
     marginVertical: 20,
-    
   },
   title: {
     fontSize: 24,
@@ -182,14 +181,12 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     width: '100%',
-    
   },
   googleButton: {
     width: '96%',
     height: 48,
     marginBottom: 15,
-    marginHorizontal:10,
-    
+    marginHorizontal: 10,
   },
   orText: {
     marginVertical: 10,
@@ -197,13 +194,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     alignSelf: 'center',
-    
   },
   dividerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 20,
-    
   },
   dividerLine: {
     flex: 1,

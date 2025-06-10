@@ -9,7 +9,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
 
 const Signup = ({onSwitchToLogin}) => {
@@ -43,21 +43,18 @@ const Signup = ({onSwitchToLogin}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logoContainerlogo}>
-        <Image
-          style={styles.logo}
-          source={require('../assets/loginbg.png')}
+        <Image style={styles.logo} source={require('../assets/loginbg.png')} />
+      </View>
+      <View style={styles.logoContainer}>
+        <LottieView
+          source={require('../assets/Animation - 1747981972433.json')}
+          autoPlay
+          loop
+          style={{width: 150, height: 150}}
         />
       </View>
-       <View style={styles.logoContainer}>
-              <LottieView
-                source={require('../assets/Animation - 1747981972433.json')}
-                autoPlay
-                loop
-                style={{width: 150, height: 150}}
-              />
-            </View>
-  <View style={{marginVertical:10}}>
-      <Text style={styles.title}>Create Account</Text>
+      <View style={{marginVertical: 10}}>
+        <Text style={styles.title}>Create Account</Text>
       </View>
       <View style={styles.formContainer}>
         <TextInput
@@ -69,7 +66,7 @@ const Signup = ({onSwitchToLogin}) => {
           autoCapitalize="none"
           placeholderTextColor="#666"
         />
-  
+
         <TextInput
           style={styles.input}
           placeholder="Password"
@@ -78,11 +75,11 @@ const Signup = ({onSwitchToLogin}) => {
           secureTextEntry
           placeholderTextColor="#666"
         />
-  
+
         <TouchableOpacity style={styles.button} onPress={onSignup}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
-  
+
         <TouchableOpacity onPress={navigateToLogin}>
           <Text style={styles.switchText}>
             Already have an account? <Text style={styles.link}>Log In</Text>
@@ -91,7 +88,6 @@ const Signup = ({onSwitchToLogin}) => {
       </View>
     </SafeAreaView>
   );
-  
 };
 
 const styles = StyleSheet.create({
@@ -102,13 +98,13 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     flexDirection: 'row',
-    marginBottom: 20, // Adds spacing below the logo
+    // marginBottom: 20, // Adds spacing below the logo
     alignItems: 'center',
     justifyContent: 'center',
   },
   logoContainerlogo: {
     flexDirection: 'row',
-    marginBottom: 20, // Adds spacing below the logo
+    // marginBottom: 20, // Adds spacing below the logo
     marginHorizontal: 20,
   },
   logo: {
@@ -132,7 +128,7 @@ const styles = StyleSheet.create({
   formContainer: {
     width: '90%',
     alignItems: 'center',
-    marginHorizontal  : 20,
+    marginHorizontal: 20,
   },
   input: {
     width: '100%',
@@ -143,7 +139,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000',
     marginBottom: 15,
-    marginHorizontal  : 10, 
+    marginHorizontal: 10,
   },
   button: {
     width: '100%',
@@ -156,7 +152,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     shadowColor: '#000',
     shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowRadius: 4,
   },
   buttonText: {
@@ -174,6 +170,5 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 });
-
 
 export default Signup;
